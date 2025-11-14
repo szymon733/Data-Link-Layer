@@ -1,0 +1,18 @@
+:root {
+    --dark-background: #424040;
+}
+
+body {
+    background-color: var(--dark-background);
+    color: white;
+}
+
+.dark-table th, .dark-table td {
+    background-color: inherit;
+    color: inherit;
+}
+
+img {
+  width: 960px; 
+  height: auto;
+}
