@@ -8,9 +8,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Theoretical Part</h1>
+        <h2>1. Ethernet standards for physical layer, ethernet limits, Ethernet frame </h2>
+        <p>
+        Ethernet standards for physical layer - <br>
+        10 Base5    -   Thick Co-axial Cable with Bus Topology<br>
+        10 Base2    -   Thin Co-axial Cable with Bus Topology<br>
+        10 BaseT    -   UTP Cat 3/5 with Tree Topology<br>
+        10 BaseFL   -   Multimode/Singlemode Fiber with Tree Topology
 
-    <h1>Theoretical Part</h1>
-    
-     <h2><a href="index.html">Go back</a></h2>
+        </p>
+        <p>
+            Ethernet limits - ...
+        </p>
+        <p>
+            Ethernet frame - data packet format for transmitting data over an Ethernet network.<br>
+            |Preamble|Dest. Adress|Source Adress|Type|Data|CRC|<br>
+            Preamble - 7 bytes with pattern 10101010 followed by one byte with pattern 10101011 used to synchronize receiver, sender clock rates. <br>            
+        </p>
+
+        <h2>2. MAC adress, broadcasting</h2>
+        <p>
+            MAC adress -  unique adress hard-wired into every network device by manufacturer. MAC addresses are unique; no two network devices made by any manufacturer anywhere in the world can have the same MAC address.
+        </p>
+        <p>
+            Broadcasting - one-to-all communication method. It allows single sender to transmits a data packet to every device on a specific network or broadcast domain.
+        </p>
+        <h2>3. The difference between hub, switch and router</h2>
+        <p>
+            Hub is multiport repeater. It regenerates and amplifies every packet received on any port on all of it's other ports. Hubs do not examine the contents of the packets that they regenerate and that is why they are working at Physical Layer. Works in half-duplex - it cannot send and receive at the same time. 
+        </p>
+        <p>
+            Switch connects devices within a LAN. It is an intelligent hub that examines the MAC address of arriving packets to determin which port to forward the (packet czy frame? !!!!!!) to(unicast). It supports full-duplex - it can send and recive at the same time
+        </p>
+        <p>
+            Router connects different networks (different IP subnets), such as LAN and the internet and forwards data packets between them using IP addresses.
+        </p>
+        <h2>4. CSMA/CD, collision, half and full duplex</h2>
+        <p>
+            CSMA/CD - Carrier Sense  Multiple Access/Collision Detection <br>
+            Whenever a device wants to send a packet over the network media, it first listens to the network media to see whether anyone else is already sending a packet. If it doesn't hear any other signals on the media, the computer assumes that the network is free, so it sends the packet. Nothing prevents two or more devices from trying to send a message at the same time. After a device sends a packet, it listens carefully to see
+            whether the packet crashes into another packet.  If it crashes, it waits a random period of time and then tries to send the packet again. Because the delay is random, two packets that collide are sent again after different delay periods, so a second collision is unlikely.
+        </p>
+        <p></p>
+        <p>Half-duplex - Data flows in both directions, but only in one direction at a time. Devices take turns sending and receiving data. The available bandwidth is shared, so the effective throughput is lower.</p>
+        <p>Full-duplex - Data flows in both directions at the same time. Dedicated bandwidth for sending and receiving, leading to higher throughput and no collision issues. </p>
+
+        <h2>5. ARP request, detecting doubled IP address</h2>
+        <p>
+            When a device needs to send data to another device on the same network, it first checks its internal ARP cache (a table of IP-to-MAC address mappings) for the destination IP address. If the IP address is not in the cache, the device broadcasts an ARP request on the local network segment. The request contains the IP and MAC address of the sender, and the IP address of the intended recipient. The recipient's MAC address field is set to a broadcast address to ensure all devices receive it. Every device on the local network receives the broadcast.
+        </p>
+        <p>
+            Detecting doubled IP address - 
+        </p>
+        <h2>6. BOOTP, DHCP</h2>
+
+    </div>
+
+    <h2><a href="index.html">Go back</a></h2>
 </body>
 </html>
