@@ -12,15 +12,10 @@
         <h1>Theoretical Part</h1>
         <h2>1. Ethernet standards for physical layer, ethernet limits, Ethernet frame </h2>
         <p>
-        Ethernet standards for physical layer - <br>
-        10 Base5    -   Thick Co-axial Cable with Bus Topology<br>
-        10 Base2    -   Thin Co-axial Cable with Bus Topology<br>
-        10 BaseT    -   UTP Cat 3/5 with Tree Topology<br>
-        10 BaseFL   -   Multimode/Singlemode Fiber with Tree Topology<br>
-        to je z prezentacji ale imo to za mało jakies stare panie
+            Ethernet standards for physical layer - ... <br>
 
-        </p>
-        <p>
+        slajdy 32 - 37 trzeba cos z tego wystrugac
+        z prezentacji ale imo to za mało jakies stare panie
             Ethernet limits - ...
         </p>
         <p>
@@ -28,7 +23,20 @@
         </p>
         <img src="img/1.1ethernet_frame.png" alt="">
         <p>
-            Preamble - 7 bytes with pattern 10101010 followed by one byte with pattern 10101011 used to synchronize receiver, sender clock rates. <br>            
+            Preamble - 7 bytes and Start Frame Delimiter - 1 byte<br>
+            A sequence of alternating bits 7 times (101010100)  and one (10101011) used to synchronize the transmitter and receiver before the actual frame begins.
+        </p>
+        <p>
+            Destination Address - 6 bytes and Source Address - 6 bytes<br>
+            MAC addresses identifying the intended receiver and the sender. In modern switched networks, frames are forwarded only to the correct port; broadcast and multicast frames are delivered to all hosts.
+        </p>
+        <p>
+            Type Field - 2 bytes<br>
+            Indicates the upper-layer protocol contained in the payload. Common values include IPv4, IPv6, and ARP; older protocols such as IPX and AppleTalk may also appear.
+        </p>
+        <p>
+            CRC - 4 bytes<br>
+            A 32-bit cyclic redundancy check used for error detection. If the CRC does not match, the receiver discards the frame without requesting retransmission.
         </p>
 
         <h2>2. MAC adress, broadcasting</h2>
@@ -48,13 +56,14 @@
         <p>
             Router connects different networks (different IP subnets), such as LAN and the internet and forwards data packets between them using IP addresses.
         </p>
+
         <h2>4. CSMA/CD, collision, half and full duplex</h2>
         <p>
             CSMA/CD - Carrier Sense  Multiple Access/Collision Detection <br>
             Whenever a device wants to send a packet over the network media, it first listens to the network media to see whether anyone else is already sending a packet. If it doesn't hear any other signals on the media, the computer assumes that the network is free, so it sends the packet. Nothing prevents two or more devices from trying to send a message at the same time. After a device sends a packet, it listens carefully to see
             whether the packet crashes into another packet.  If it crashes, it waits a random period of time and then tries to send the packet again. Because the delay is random, two packets that collide are sent again after different delay periods, so a second collision is unlikely.
         </p>
-        <p></p>
+        <p>Collision - ...</p>
         <p>Half-duplex - Data flows in both directions, but only in one direction at a time. Devices take turns sending and receiving data. The available bandwidth is shared, so the effective throughput is lower.</p>
         <p>Full-duplex - Data flows in both directions at the same time. Dedicated bandwidth for sending and receiving, leading to higher throughput and no collision issues. </p>
 
@@ -63,12 +72,25 @@
             When a device needs to send data to another device on the same network, it first checks its internal ARP cache (a table of IP-to-MAC address mappings) for the destination IP address. If the IP address is not in the cache, the device broadcasts an ARP request on the local network segment. The request contains the IP and MAC address of the sender, and the IP address of the intended recipient. The recipient's MAC address field is set to a broadcast address to ensure all devices receive it. Every device on the local network receives the broadcast.
         </p>
         <p>
-            Detecting doubled IP address - 
+            Detecting doubled IP address - ...
         </p>
+        
         <h2>6. BOOTP, DHCP</h2>
+        <p>
+            DHCP - Dynamic Host Configuration Protoco; allows individual computers on a TCP/IP network to obtain thei IP address and other communication parameters from a server.
+            The  DHCP server keeps track of which IP addresses are already assigned so that when a computer requests an IP address, the DHCP server offers it an IP address that is not already in use. <br>
+            Client              server <br>
+            DHCPDISCOVER -DHCPOFFER- DHCPREQUEST - Acknowledgement <br>
+            DHCP only leases the adress
+        </p>
+        <p>
+            BOOTP - uses a static method for IP address allocation. The IP address is assigned based on the MAC address of the client, meaning that the same IP address is assigned to a client eachtime it requests one.
+        </p>
 
         <h2>VLANs</h2>
-
+        <p>
+            VLANs - allows multiple separate logical networks to exist on the same physical LAN infrastructure. VLAN tagging is implemented according to the 802.1Q specification, which inserts a VLAN tag inside the Ethernet frame. Devices in different VLANs are isolated from each other. Communication between VLANs requires a Layer 3 device (router or Layer 3 switch). VLANs are ideal for separating groups of devices that should not communicate directly, improving security, reducing broadcast traffic, and organizing the network.
+        </p>
     </div>
 
     <h2><a href="index.html">Go back</a></h2>
