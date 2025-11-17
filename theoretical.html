@@ -36,7 +36,7 @@
             A sequence of alternating bits 7 times (101010100)  and one (10101011) used to synchronize the transmitter and receiver before the actual frame begins.
         </p>
         <p>
-            <b>Destination Address</b> - 6 bytes and Source Address - 6 bytes<br>
+            <b>Destination Address</b> - 6 bytes and <b>Source Address</b> - 6 bytes<br>
             MAC addresses identifying the intended receiver and the sender. In modern switched networks, frames are forwarded only to the correct port; broadcast and multicast frames are delivered to all hosts.
         </p>
         <p>
@@ -87,10 +87,7 @@
         <h2>6. BOOTP, DHCP</h2>
         <p>
             <b>DHCP</b> - Dynamic Host Configuration Protoco; allows individual computers on a TCP/IP network to obtain thei IP address and other communication parameters from a server.
-            The  DHCP server keeps track of which IP addresses are already assigned so that when a computer requests an IP address, the DHCP server offers it an IP address that is not already in use. <br>
-            Client              server <br>
-            DHCPDISCOVER -DHCPOFFER- DHCPREQUEST - Acknowledgement <br>
-            DHCP only leases the adress
+            The  DHCP server keeps track of which IP addresses are already assigned so that when a computer requests an IP address, the DHCP server offers it an IP address that is not already in use.
         </p>
         <p>
             <b>BOOTP</b> - uses a static method for IP address allocation. The IP address is assigned based on the MAC address of the client, meaning that the same IP address is assigned to a client eachtime it requests one.
