@@ -12,12 +12,20 @@
         <h1>Theoretical Part</h1>
         <h2>1. Ethernet standards for physical layer, ethernet limits, Ethernet frame </h2>
         <p>
-            Ethernet standards for physical layer - ... <br>
-
-        slajdy 32 - 37 trzeba cos z tego wystrugac
-        z prezentacji ale imo to za mało jakies stare panie
-            Ethernet limits - ...
+            Ethernet standards for physical layer - speed versions. Transmission speed measured in millions of bits per second (Mbps) <i>under ideal conditions</i>:
         </p>
+        <ul>
+            <li>Standard - 10 Mbps</li>
+            <li>Fast - 100 Mbps</li>
+            <li>Gigabit - 1000 Mbps</li>
+            <li>10 Gigabit - 10 Gbps</li>
+        </ul>
+        <p>Symbols - <b>XXBaseXX</b></p>
+        <ul>
+            <li>First number is the speed of the network, eg. 100 for Fast Ethernet</li>
+            <li>"Base" stands for "baseband" - transmissions carry one signal at a time (in opposite to broadband)</li>
+            <li>The end tail can indicate several things. Number is max. length of the cable in hundred meters, eg. 5 => 500 meters. Letters indicate the type of the cable. (T - twisted pair, SX, LX, SR, LR, ER, FX... - several types of fiber optic</li>
+        </ul>
         <p>
             Ethernet frame - data packet format for transmitting data over an Ethernet network.<br>
         </p>
@@ -63,7 +71,7 @@
             Whenever a device wants to send a packet over the network media, it first listens to the network media to see whether anyone else is already sending a packet. If it doesn't hear any other signals on the media, the computer assumes that the network is free, so it sends the packet. Nothing prevents two or more devices from trying to send a message at the same time. After a device sends a packet, it listens carefully to see
             whether the packet crashes into another packet.  If it crashes, it waits a random period of time and then tries to send the packet again. Because the delay is random, two packets that collide are sent again after different delay periods, so a second collision is unlikely.
         </p>
-        <p>Collision - ...</p>
+        <p>Collision - occurs when more than one node transmits. In bus topology it can be detected by comparing transmitted data with received or by recognizing higher amplitude of the signal than usual. If signal sent is different than received back, the node sends jam signal which notifies collision on the network.</p>
         <p>Half-duplex - Data flows in both directions, but only in one direction at a time. Devices take turns sending and receiving data. The available bandwidth is shared, so the effective throughput is lower.</p>
         <p>Full-duplex - Data flows in both directions at the same time. Dedicated bandwidth for sending and receiving, leading to higher throughput and no collision issues. </p>
 
